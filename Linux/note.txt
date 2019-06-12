@@ -1,0 +1,7 @@
+There are two scripts written 
+1. script.py
+2. script1.py
+
+script.py : os.sytem is being used to import each dependency. Error cannot be handled as os.system automatically display an error message and continues with next step.
+
+script1.py : pip main is used to install the dependencies. This will break after the first dependency is installed because pip will set os.environ['PIP_REQ_TRACKER'] to a temporary directory name which gets deleted afterwards, but environment is not cleared. But this method is close to handling the exception in case the installation fails.
